@@ -1,0 +1,18 @@
+{
+  "general_config": {
+    "windows": ["frmМонитор*"]
+  },
+  "scenario": [
+    {
+      "filename": "click",
+      "config": {
+        "objects": ["*Выход"]
+      }
+    },
+    {
+      "filename": "waittillguinotexist",
+      "config": {
+      }
+    }
+  ]
+}

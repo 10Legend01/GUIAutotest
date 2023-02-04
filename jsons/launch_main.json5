@@ -1,0 +1,65 @@
+{
+  "general_config": {
+    "window_login": "*Вход*в*программу*",
+    "window_main": "frmМонитор*"
+  },
+  "required": [
+    {
+      "login": "login"
+    },
+    {
+      "password": "password"
+    }
+  ],
+  "scenario": [
+    {
+      "filename": "guiexist",
+      "config": {
+        "windows": ["$window_login"],
+        "objects": ["*Монитор*"]
+      }
+    },
+    {
+      "filename": "guinotexist",
+      "config": {
+        "windows": ["$window_main"]
+      }
+    },
+    {
+      "filename": "settextvalue",
+      "config": {
+        "windows": ["$window_login"],
+        "objects": ["txt0"],
+        "text": "$login"
+      }
+    },
+    {
+      "filename": "settextvalue",
+      "config": {
+        "windows": ["$window_login"],
+        "objects": ["txt1"],
+        "text": "$password"
+      }
+    },
+    {
+      "filename": "click",
+      "config": {
+        "windows": ["$window_login"],
+        "objects": ["*Ок"]
+      }
+    },
+    {
+      "filename": "waittillguinotexist",
+      "config": {
+        "windows": ["$window_login"],
+        "objects": ["*Монитор*"]
+      }
+    },
+    {
+      "filename": "waittillguiexist",
+      "config": {
+        "windows": ["$window_main"]
+      }
+    }
+  ]
+}

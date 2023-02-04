@@ -1,0 +1,18 @@
+{
+  "general_config": {
+    "name": "Monitor",
+    "windows": ["frmМонитор*"]
+  },
+  "scenario": [
+    {
+      "filename": "force_kill",
+      "config": {
+      }
+    },
+    {
+      "filename": "waittillguinotexist",
+      "config": {
+      }
+    }
+  ]
+}

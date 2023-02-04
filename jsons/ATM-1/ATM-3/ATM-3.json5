@@ -1,0 +1,224 @@
+{
+  "general_config": {
+  },
+  "required": [
+    {
+      "login": "login"
+    },
+    {
+      "password": "password"
+    }
+  ],
+  "parallel": true,
+  "scenario": [
+    {
+      "general_config": {
+      },
+      "scenario": [
+        {
+          "general_config": {
+            "windows": [
+              "*Вход*в*программу*"
+            ]
+          },
+          "scenario": [
+            {
+              "filename": "guinotexist",
+              "config": {
+              }
+            },
+            {
+              "filename": "start_subprocess",
+              "config": {
+                "command": "sh /home/user/Monitor/Monitor.sh"
+              }
+            },
+            {
+              "filename": "waittillguiexist",
+              "config": {
+                "objects": [
+                  "*Монитор*"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "general_config": {
+            "window_login": "*Вход*в*программу*",
+            "window_main": "frmМонитор*"
+          },
+          "scenario": [
+            {
+              "filename": "guiexist",
+              "config": {
+                "windows": [
+                  "$window_login"
+                ],
+                "objects": [
+                  "*Монитор*"
+                ]
+              }
+            },
+            {
+              "filename": "guinotexist",
+              "config": {
+                "windows": [
+                  "$window_main"
+                ]
+              }
+            },
+            {
+              "filename": "settextvalue",
+              "config": {
+                "windows": [
+                  "$window_login"
+                ],
+                "objects": [
+                  "txt0"
+                ],
+                "text": "$login"
+              }
+            },
+            {
+              "filename": "settextvalue",
+              "config": {
+                "windows": [
+                  "$window_login"
+                ],
+                "objects": [
+                  "txt1"
+                ],
+                "text": "$password"
+              }
+            },
+            {
+              "filename": "click",
+              "config": {
+                "windows": [
+                  "$window_login"
+                ],
+                "objects": [
+                  "*Ок"
+                ]
+              }
+            },
+            {
+              "filename": "waittillguinotexist",
+              "config": {
+                "windows": [
+                  "$window_login"
+                ],
+                "objects": [
+                  "*Монитор*"
+                ]
+              }
+            },
+            {
+              "filename": "waittillguiexist",
+              "config": {
+                "windows": [
+                  "$window_main"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "general_config": {
+            "window_main": "frmМонитор*",
+            "window_profile": "frmМенеджер*"
+          },
+          "scenario": [
+            {
+              "filename": "guinotexist",
+              "config": {
+                "windows": [
+                  "$window_profile"
+                ]
+              }
+            },
+            {
+              "filename": "click",
+              "config": {
+                "windows": [
+                  "$window_main"
+                ],
+                "objects": [
+                  "mnuМенеджер"
+                ]
+              }
+            },
+            {
+              "filename": "waittillguiexist",
+              "config": {
+                "windows": [
+                  "$window_profile"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "general_config": {
+            "windows": [
+              "frmМенеджер*"
+            ]
+          },
+          "scenario": [
+            {
+              "filename": "click",
+              "config": {
+                "objects": [
+                  "*Выход"
+                ]
+              }
+            },
+            {
+              "filename": "waittillguinotexist",
+              "config": {
+              }
+            }
+          ]
+        },
+        {
+          "general_config": {
+            "windows": [
+              "frmМонитор*"
+            ]
+          },
+          "scenario": [
+            {
+              "filename": "click",
+              "config": {
+                "objects": [
+                  "*Выход"
+                ]
+              }
+            },
+            {
+              "filename": "waittillguinotexist",
+              "config": {
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "general_config": {
+        "names": [
+          "Monitor",
+          "ProfileManager"
+        ]
+      },
+      "scenario": [
+        {
+          "filename": "force_kill",
+          "config": {
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "general_config": {
+    "windows": ["*Вход*в*программу*"]
+  },
+  "scenario": [
+    {
+      "filename": "guinotexist",
+      "config": {
+      }
+    },
+    {
+      "filename": "start_subprocess",
+      "config": {
+        "command": "sh /home/user/Monitor/Monitor.sh"
+      }
+    },
+    {
+      "filename": "waittillguiexist",
+      "config": {
+        "objects": ["*Монитор*"]
+      }
+    }
+  ]
+}

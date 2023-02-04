@@ -1,0 +1,18 @@
+{
+  "general_config": {
+    "windows": ["frmМенеджер*"]
+  },
+  "scenario": [
+    {
+      "filename": "click",
+      "config": {
+        "objects": ["*Выход"]
+      }
+    },
+    {
+      "filename": "waittillguinotexist",
+      "config": {
+      }
+    }
+  ]
+}

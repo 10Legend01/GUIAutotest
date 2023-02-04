@@ -1,0 +1,85 @@
+{
+  "general_config": {
+  },
+  "parallel": true,
+  "scenario": [
+    {
+      "general_config": {
+      },
+      "scenario": [
+        {
+          "json": ["launch"]
+        },
+        {
+          "json": ["launch_main", "logins/Operator", "passwords/_"]
+        },
+        {
+          "general_config": {
+            "window_main": ["frmМонитор*"],
+            "window_profile": ["frmМенеджер*"]
+          },
+          "scenario": [
+            {
+              "filename": "guinotexist",
+              "config": {
+                "windows": "$window_profile"
+              }
+            },
+            {
+              "general_config": {
+                "windows": ["dlgВнимание*"]
+              },
+              "success": true,
+              "xfail": true,
+              "scenario": [
+                {
+                  "filename": "waittillguiexist",
+                  "config": {
+                  }
+                },
+                {
+                  "filename": "click",
+                  "config": {
+                    "objects": ["*Закрыть*"]
+                  }
+                },
+                {
+                  "filename": "waittillguinotexist",
+                  "config": {
+                  }
+                }
+              ]
+            },
+            {
+              "filename": "activatewindow",
+              "config": {
+                "windows": "$window_main"
+              }
+            },
+            {
+              "filename": "generatekeyevent",
+              "config": {
+                "text": "<ctrl>p"
+              }
+            },
+            {
+              "filename": "waittillguiexist",
+              "config": {
+                "windows": "$window_profile"
+              }
+            }
+          ]
+        },
+        {
+          "json": ["close_main_Profile"]
+        },
+        {
+          "json": ["close_main"]
+        }
+      ]
+    },
+    {
+      "json": ["force_kill_all"]
+    }
+  ]
+}

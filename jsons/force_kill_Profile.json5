@@ -1,0 +1,18 @@
+{
+  "general_config": {
+    "name": "Profile",
+    "windows": ["frmМенеджер*"]
+  },
+  "scenario": [
+    {
+      "filename": "force_kill",
+      "config": {
+      }
+    },
+    {
+      "filename": "waittillguinotexist",
+      "config": {
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "general_config": {
+    "names": ["Monitor", "Profile"]
+  },
+  "scenario": [
+    {
+      "filename": "force_kill",
+      "config": {
+      }
+    }
+  ]
+}
